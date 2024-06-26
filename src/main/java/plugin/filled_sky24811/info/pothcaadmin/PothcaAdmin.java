@@ -16,14 +16,14 @@ public final class PothcaAdmin extends JavaPlugin {
         instance = this;
         getCommand("pothca_admin").setExecutor(new pothca_admin(this));
 
-        Bukkit.getLogger().info("[PothcaAdminPlugin] が起動されました");
+        Bukkit.getLogger().info("[PothcaAdminPlugin]が起動されました");
     }
 
     @Override
     public void onDisable() {
         // Plugin shutdown logic
         instance = null;
-        Bukkit.getLogger().info("[PothcaAdminPlugin] が終了しました");
+        Bukkit.getLogger().info("[PothcaAdminPlugin]が終了しました");
     }
     public static PothcaAdmin getInstance(){
         return instance;
