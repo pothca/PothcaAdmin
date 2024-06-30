@@ -1,10 +1,12 @@
 package plugin.filled_sky24811.info.pothcaadmin.Commands.subcommands;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import plugin.filled_sky24811.info.pothcaadmin.Jsons.godData;
 
 public class god {
 
@@ -24,17 +26,26 @@ public class god {
             player.addPotionEffect(new PotionEffect(PotionEffectType.INSTANT_HEALTH, Integer.MAX_VALUE, 1));
             player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, Integer.MAX_VALUE, 10));
             player.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, Integer.MAX_VALUE, 1));
+            godData.setGod(player.getUniqueId(), true);
             sender.sendMessage(PluginMessage + ChatColor.GREEN + "godを有効化しました");
             return true;
         } else if (args[1].equalsIgnoreCase("disable")) {
             player.removePotionEffect(PotionEffectType.INSTANT_HEALTH);
             player.removePotionEffect(PotionEffectType.RESISTANCE);
             player.removePotionEffect(PotionEffectType.SATURATION);
+            godData.setGod(player.getUniqueId(), false);
             sender.sendMessage(PluginMessage + ChatColor.GREEN + "godを無効化しました");
             return true;
         } else {
             sender.sendMessage(PluginMessage + ChatColor.RED + "enableかdisableを指定してください！");
             return true;
+        }
+    }
+    public void handlePlayerJoin(Player player) {
+        if (godData.isGod(player.getUniqueId())) {
+            player.addPotionEffect(new PotionEffect(PotionEffectType.INSTANT_HEALTH, Integer.MAX_VALUE, 1));
+            player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, Integer.MAX_VALUE, 10));
+            player.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, Integer.MAX_VALUE, 1));
         }
     }
 }

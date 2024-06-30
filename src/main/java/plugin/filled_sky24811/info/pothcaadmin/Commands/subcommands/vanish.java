@@ -42,7 +42,6 @@ public class vanish {
             return true;
         }
     }
-
     public void handlePlayerJoin(Player player) {
         if (vanishData.isVanished(player.getUniqueId())) {
             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
