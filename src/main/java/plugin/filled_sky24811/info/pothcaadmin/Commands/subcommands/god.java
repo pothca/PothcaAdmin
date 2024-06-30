@@ -20,13 +20,13 @@ public class god {
         }
         Player player = (Player) sender;
 
-        if (args[0].equalsIgnoreCase("enable")) {
+        if (args[1].equalsIgnoreCase("enable")) {
             player.addPotionEffect(new PotionEffect(PotionEffectType.INSTANT_HEALTH, Integer.MAX_VALUE, 1));
             player.addPotionEffect(new PotionEffect(PotionEffectType.RESISTANCE, Integer.MAX_VALUE, 10));
             player.addPotionEffect(new PotionEffect(PotionEffectType.SATURATION, Integer.MAX_VALUE, 1));
             sender.sendMessage(PluginMessage + ChatColor.GREEN + "godを有効化しました");
             return true;
-        } else if (args[0].equalsIgnoreCase("disable")) {
+        } else if (args[1].equalsIgnoreCase("disable")) {
             player.removePotionEffect(PotionEffectType.INSTANT_HEALTH);
             player.removePotionEffect(PotionEffectType.RESISTANCE);
             player.removePotionEffect(PotionEffectType.SATURATION);

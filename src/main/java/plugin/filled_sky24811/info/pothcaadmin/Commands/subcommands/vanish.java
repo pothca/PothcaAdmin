@@ -21,7 +21,7 @@ public class vanish {
 
         Player player = (Player) sender;
 
-        if (args[0].equalsIgnoreCase("enable")) {
+        if (args[1].equalsIgnoreCase("enable")) {
             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
                 if (!onlinePlayer.equals(player)) {
                     onlinePlayer.hidePlayer(player);
@@ -30,7 +30,7 @@ public class vanish {
             vanishData.setVanish(player.getUniqueId(), true);
             sender.sendMessage(PluginMessage + ChatColor.GREEN + "vanishを有効化しました");
             return true;
-        } else if (args[0].equalsIgnoreCase("disable")) {
+        } else if (args[1].equalsIgnoreCase("disable")) {
             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
                 onlinePlayer.showPlayer(player);
             }
