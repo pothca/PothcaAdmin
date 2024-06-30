@@ -2,47 +2,9 @@ name: PothcaAdmin
 version: '1.0'
 main: plugin.filled_sky24811.info.pothcaadmin.PothcaAdmin
 api-version: '1.20'
+default-permission: op
 commands:
-  p-playerlocation:
-    description: Catch player location
-    permission: pothcaadmin.commands.playerlocation
+  pothca_admin:
+    description: AdminOnly
+    permission: pothcaadmin.command
     permission-message: You don't have permission!
-  p-allkick:
-    description: kick all players
-    permission: pothcaadmin.commands.allkick
-    permission-message: You don't have permission!
-  p-fly:
-    description: You can fly
-    permission: pothcaadmin.commands.fly
-    permission-message: You don't have permission!
-  p-god:
-    description: You can god
-    permission: pothcaadin.commands.god
-    permission-message: You don't have permission!
-  p-vanish:
-    description: You can vanish
-    permission: pothcaadmin.commands.vanish
-    permission-message: You don't have permission!
-
-
-permissions:
-  pothcaadmin.*:
-    description: admin permisstions
-    children:
-      pothcaadmin.commands.playerlocation: true
-      pothcaadmin.commands.allkick: true
-      pothcaadmin.commands.fly: true
-      pothcaadmin.commands.god: true
-      pothcaadmin.commands.vanish: true
-
-  ##Child Permissions
-  pothcaadmin.commands.playerlocation:
-    default: false
-  pothcaadmin.commands.allkick:
-    default: false
-  pothcaadmin.commands.fly:
-    default: false
-  pothcaadmin.commands.god:
-    default: false
-  pothcaadmin.commands.vanish:
-    default: false

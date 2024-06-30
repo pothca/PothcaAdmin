@@ -7,7 +7,7 @@ import plugin.filled_sky24811.info.pothcaadmin.PothcaAdmin;
 
 public class help {
 
-    public void sendHelp(CommandSender sender, Command cmd, String label, String[] args, PothcaAdmin plugin, String PluginMessage){
+    public boolean sendHelp(CommandSender sender, Command cmd, String label, String[] args, PothcaAdmin plugin, String PluginMessage){
         sender.sendMessage(ChatColor.AQUA +
                 "------Pothca Admin Help------\n" + ChatColor.RESET +
                 "/pothca_admin help\n" +  ChatColor.GRAY +
@@ -16,5 +16,6 @@ public class help {
                 "configファイルをreloadします\n" + ChatColor.RESET +
                 ""
         );
+        return true;
     }
 }
