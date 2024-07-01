@@ -17,13 +17,13 @@ public class fly {
             sender.sendMessage(PluginMessage + ChatColor.RED + "enableかdisableを指定してください！");
         }
         Player player = (Player) sender;
-        if (args[0].equalsIgnoreCase("enable")) {
+        if (args[1].equalsIgnoreCase("enable")) {
             player.setAllowFlight(true);
             player.setFlying(true);
             flyData.setFly(player.getUniqueId(), true);
             sender.sendMessage(PluginMessage + ChatColor.GREEN + "flyを有効化しました");
             return true;
-        } else if (args[0].equalsIgnoreCase("disable")) {
+        } else if (args[1].equalsIgnoreCase("disable")) {
             player.setAllowFlight(false);
             player.setFlying(false);
             flyData.setFly(player.getUniqueId(), false);

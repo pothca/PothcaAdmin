@@ -6,7 +6,7 @@
 
     <groupId>plugin.filled_sky24811.info</groupId>
     <artifactId>PothcaAdmin</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <name>PothcaAdmin</name>

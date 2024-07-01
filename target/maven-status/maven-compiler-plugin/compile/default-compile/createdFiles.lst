@@ -1,8 +1,10 @@
 plugin\filled_sky24811\info\pothcaadmin\Commands\subcommands\reload.class
+plugin\filled_sky24811\info\pothcaadmin\Jsons\godData.class
 plugin\filled_sky24811\info\pothcaadmin\Commands\subcommands\fly.class
 plugin\filled_sky24811\info\pothcaadmin\Commands\subcommands\help.class
 plugin\filled_sky24811\info\pothcaadmin\Commands\subcommands\god.class
 plugin\filled_sky24811\info\pothcaadmin\Commands\pothca_admin.class
+plugin\filled_sky24811\info\pothcaadmin\Jsons\flyData.class
 plugin\filled_sky24811\info\pothcaadmin\Jsons\vanishData.class
 plugin\filled_sky24811\info\pothcaadmin\EventListener\PlayerJoinListener.class
 plugin\filled_sky24811\info\pothcaadmin\Commands\playerlocation.class

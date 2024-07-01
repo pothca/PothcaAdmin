@@ -1,5 +1,5 @@
 name: PothcaAdmin
-version: '1.0'
+version: '1.0.0'
 main: plugin.filled_sky24811.info.pothcaadmin.PothcaAdmin
 api-version: '1.20'
 default-permission: op

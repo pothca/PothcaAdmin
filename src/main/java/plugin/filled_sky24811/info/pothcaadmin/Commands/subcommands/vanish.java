@@ -2,6 +2,7 @@ package plugin.filled_sky24811.info.pothcaadmin.Commands.subcommands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Particle;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import plugin.filled_sky24811.info.pothcaadmin.Jsons.vanishData;
@@ -27,6 +28,7 @@ public class vanish {
                     onlinePlayer.hidePlayer(player);
                 }
             }
+            ((Player) sender).spawnParticle(Particle.CLOUD, ((Player) sender).getLocation(), 100, 0.5, 1.00, 0.5);
             vanishData.setVanish(player.getUniqueId(), true);
             sender.sendMessage(PluginMessage + ChatColor.GREEN + "vanishを有効化しました");
             return true;
@@ -34,6 +36,7 @@ public class vanish {
             for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
                 onlinePlayer.showPlayer(player);
             }
+            ((Player) sender).spawnParticle(Particle.CLOUD, ((Player) sender).getLocation(), 100, 0.5, 1.00, 0.5);
             vanishData.setVanish(player.getUniqueId(), false);
             sender.sendMessage(PluginMessage + ChatColor.GREEN + "vanishを無効化しました");
             return true;

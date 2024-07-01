@@ -17,7 +17,7 @@ public class flyData {
     private static final File flyFile = new File("plugins/PothcaAdmin/flyFile.json");
     private static Map<UUID, Boolean> flyMap = new HashMap<>();
 
-    public static void saveVanishData() {
+    public static void saveFlyData() {
         try {
             if (!flyFile.getParentFile().exists()) {
                 flyFile.getParentFile().mkdirs();
@@ -44,7 +44,7 @@ public class flyData {
 
     public static void setFly(UUID uuid, boolean fly) {
         flyMap.put(uuid, fly);
-        saveVanishData();
+        saveFlyData();
     }
 
     public static boolean isFly(UUID uuid) {

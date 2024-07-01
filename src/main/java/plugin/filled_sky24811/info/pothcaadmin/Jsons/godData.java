@@ -17,7 +17,7 @@ public class godData {
     private static final File godFile = new File("plugins/PothcaAdmin/godFile.json");
     private static Map<UUID, Boolean> godMap = new HashMap<>();
 
-    public static void saveVanishData() {
+    public static void saveGodData() {
         try {
             if (!godFile.getParentFile().exists()) {
                 godFile.getParentFile().mkdirs();
@@ -44,7 +44,7 @@ public class godData {
 
     public static void setGod(UUID uuid, boolean god) {
         godMap.put(uuid, god);
-        saveVanishData();
+        saveGodData();
     }
 
     public static boolean isGod(UUID uuid) {
