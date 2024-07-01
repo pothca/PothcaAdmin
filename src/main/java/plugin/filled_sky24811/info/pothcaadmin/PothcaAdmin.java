@@ -5,7 +5,7 @@ import plugin.filled_sky24811.info.pothcaadmin.Commands.*;
 import plugin.filled_sky24811.info.pothcaadmin.Commands.subcommands.fly;
 import plugin.filled_sky24811.info.pothcaadmin.Commands.subcommands.god;
 import plugin.filled_sky24811.info.pothcaadmin.Commands.subcommands.vanish;
-import plugin.filled_sky24811.info.pothcaadmin.EventListener.PlayerJoinListener;
+import plugin.filled_sky24811.info.pothcaadmin.EventListener.EventListener;
 import plugin.filled_sky24811.info.pothcaadmin.Jsons.flyData;
 import plugin.filled_sky24811.info.pothcaadmin.Jsons.godData;
 import plugin.filled_sky24811.info.pothcaadmin.Jsons.vanishData;
@@ -29,7 +29,7 @@ public final class PothcaAdmin extends JavaPlugin {
         getCommand("pothca_admin").setTabCompleter(new Tabcomplete());
 
         Bukkit.getLogger().info("[PothcaAdminPlugin]が起動されました");
-        getServer().getPluginManager().registerEvents(new PlayerJoinListener(vanish, god, fly), this);
+        getServer().getPluginManager().registerEvents(new EventListener(vanish, god, fly), this);
     }
 
     @Override

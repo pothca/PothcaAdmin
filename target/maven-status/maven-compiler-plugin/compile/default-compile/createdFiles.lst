@@ -6,7 +6,7 @@ plugin\filled_sky24811\info\pothcaadmin\Commands\subcommands\god.class
 plugin\filled_sky24811\info\pothcaadmin\Commands\pothca_admin.class
 plugin\filled_sky24811\info\pothcaadmin\Jsons\flyData.class
 plugin\filled_sky24811\info\pothcaadmin\Jsons\vanishData.class
-plugin\filled_sky24811\info\pothcaadmin\EventListener\PlayerJoinListener.class
+plugin\filled_sky24811\info\pothcaadmin\EventListener\EventListener.class
 plugin\filled_sky24811\info\pothcaadmin\Commands\playerlocation.class
 plugin\filled_sky24811\info\pothcaadmin\Commands\subcommands\vanish.class
 plugin\filled_sky24811\info\pothcaadmin\Commands\Tabcomplete.class

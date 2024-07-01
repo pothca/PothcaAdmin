@@ -7,15 +7,15 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class vanishData {
 
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
     private static final File vanishFile = new File("plugins/PothcaAdmin/vanishData.json");
-    private static Map<UUID, Boolean> vanishMap = new HashMap<>();
+    private static final Map<UUID, Boolean> vanishMap = new ConcurrentHashMap<>();
 
     public static void saveVanishData() {
         try {
@@ -36,7 +36,8 @@ public class vanishData {
         }
 
         try (FileReader reader = new FileReader(vanishFile)) {
-            vanishMap = gson.fromJson(reader, vanishMap.getClass());
+            vanishMap.clear();
+            vanishMap.putAll(gson.fromJson(reader, ConcurrentHashMap.class));
         } catch (IOException e) {
             e.printStackTrace();
         }

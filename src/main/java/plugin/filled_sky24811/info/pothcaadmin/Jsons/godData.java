@@ -10,12 +10,13 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class godData {
 
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    private static final File godFile = new File("plugins/PothcaAdmin/godFile.json");
-    private static Map<UUID, Boolean> godMap = new HashMap<>();
+    private static final File godFile = new File("plugins/PothcaAdmin/godData.json");
+    private static final Map<UUID, Boolean> godMap = new HashMap<>();
 
     public static void saveGodData() {
         try {
@@ -36,7 +37,8 @@ public class godData {
         }
 
         try (FileReader reader = new FileReader(godFile)) {
-            godMap = gson.fromJson(reader, godMap.getClass());
+            godMap.clear();
+            godMap.putAll(gson.fromJson(reader, ConcurrentHashMap.class));
         } catch (IOException e) {
             e.printStackTrace();
         }

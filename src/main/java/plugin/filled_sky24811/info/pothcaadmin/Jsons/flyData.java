@@ -10,12 +10,13 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class flyData {
 
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    private static final File flyFile = new File("plugins/PothcaAdmin/flyFile.json");
-    private static Map<UUID, Boolean> flyMap = new HashMap<>();
+    private static final File flyFile = new File("plugins/PothcaAdmin/flyData.json");
+    private static final Map<UUID, Boolean> flyMap = new HashMap<>();
 
     public static void saveFlyData() {
         try {
@@ -36,7 +37,8 @@ public class flyData {
         }
 
         try (FileReader reader = new FileReader(flyFile)) {
-            flyMap = gson.fromJson(reader, flyMap.getClass());
+            flyMap.clear();
+            flyMap.putAll(gson.fromJson(reader, ConcurrentHashMap.class));
         } catch (IOException e) {
             e.printStackTrace();
         }
